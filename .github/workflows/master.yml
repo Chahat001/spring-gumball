@@ -18,8 +18,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Create gradle wrapper
-      run: gradle wrapper
+    - name: get inside spring-gumball
+      run: cd spring-gumball
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
