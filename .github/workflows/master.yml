@@ -2,9 +2,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -18,6 +18,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: get inside spring-gumball
+      run: cd spring-gumball
+    - name: create gradle wrapper
+      run: gradle wrapper
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
